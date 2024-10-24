@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { fetchCategories } from '../redux/slice/CategoriesSlice';
 
 const Navbar = () => {
+    const token = useSelector((state) => state.auth?.user?.token);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
 
@@ -14,7 +15,7 @@ const Navbar = () => {
     const categories = useSelector((state) => state.categories.data);
 
     useEffect(() => {
-        dispatch(fetchCategories());
+        dispatch(fetchCategories(token));
     }, [dispatch]);
 
     const toggleMenu = () => {

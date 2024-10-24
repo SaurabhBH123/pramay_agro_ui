@@ -2,9 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BaseUrl } from "../../config";
 
-export const fetchCategories = createAsyncThunk("fetchCategories", async () => {
+export const fetchCategories = createAsyncThunk("fetchCategories", async (token) => {
   try {
-    const response = await axios.get(`${BaseUrl}/api/getall/categories`);
+    const response = await axios.get(`${BaseUrl}/api/getall/categories`, {
+      headers: {
+        Authorization: `${token}`
+      }
+    });
     return response.data;
   } catch (error) {
     // console.log("error",error)
@@ -14,10 +18,14 @@ export const fetchCategories = createAsyncThunk("fetchCategories", async () => {
 
 export const fetchCategoriesById = createAsyncThunk(
   "getAllCategoriesById",
-  async (id) => {
+  async ({id,token}) => {
     try {
       const response = await axios.get(
-        `${BaseUrl}/get/specific/categories/${id}`
+        `${BaseUrl}/api/get/specific/categories/${id}`,{
+          headers:{
+            Authorization: `${token}`
+          }
+        }
       );
       
       return response.data;

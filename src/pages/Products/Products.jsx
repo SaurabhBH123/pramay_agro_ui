@@ -30,7 +30,7 @@ const Products = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         fetchData()
-        dispatch(fetchCategoriesById(id))
+        dispatch(fetchCategoriesById({id,token}))
     }, [id]);
 
     const fetchData = () => {
