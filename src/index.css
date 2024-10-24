@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+ 
+ .goog-te-gadget .goog-te-combo {
+    color: rgb(11, 11, 11) !important;
+    width: 150px;
+margin: auto;
+margin-left: 30px;
+border:1px solid rgb(0, 0, 0);
+padding: 5px;
+border-radius: 5px;
+
+}
+
+ 
+.VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd:link, .VIpgJd-ZVi9od-l4eHX-hSRGPd:visited, .VIpgJd-ZVi9od-l4eHX-hSRGPd:hover, .VIpgJd-ZVi9od-l4eHX-hSRGPd:active {
+    display: none;
+}
+.goog-te-gadget {line-height: 2px !important;color: transparent;}
+
+
+body > .skiptranslate {
+    display: none;
+}
+    
